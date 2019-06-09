@@ -1,0 +1,34 @@
+<project name="monBuild" default="assemble-app" basedir=".">
+	<property name="app.dir" value="${basedir}"/>
+	<property name="app.name" value="addWS"/>
+	<property name="generated.dir" value="${app.dir}/generated"/>
+	<property name="classes.dir" value="${app.dir}/classes"/>
+	<property name="build.dir" value="${app.dir}/build"/>
+	<property name="build.webinf.dir" value="${app.dir}/build/WEB-INF"/>
+	<property name="build.classes.dir" value="${app.dir}/build/WEB-INF/classes"/>
+	<property name="package.dir" value="webservice"/>
+	<property name="package.name" value="webservice"/>
+
+	<target name="prepare">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${build.webinf.dir}"/>
+		<mkdir dir="${build.classes.dir}"/>
+
+		<copy todir="${build.classes.dir}">
+			<fileset dir="${generated.dir}">
+				<include name="webservice/**"/>
+			</fileset>
+			<fileset dir="${classes.dir}">
+				<include name="**"/>
+			</fileset>
+		</copy>
+	</target>
+	<!--  Package  -->
+	<target name="jar" depends="prepare">
+		<jar jarfile="${build.dir}/${app.name}.war">
+			<fileset dir="${build.dir}">
+				<include name="WEB-INF/**"/>
+			</fileset>
+		</jar>
+	</target>
+</project>

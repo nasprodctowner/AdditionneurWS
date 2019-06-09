@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://webservice/" xmlns:tns="http://webservice/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="addThree" type="tns:addThree"/>
+
+  <xs:element name="addThreeResponse" type="tns:addThreeResponse"/>
+
+  <xs:element name="addTwo" type="tns:addTwo"/>
+
+  <xs:element name="addTwoResponse" type="tns:addTwoResponse"/>
+
+  <xs:complexType name="addThree">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg1" type="xs:int"/>
+      <xs:element name="arg2" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addThreeResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addTwo">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg1" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addTwoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
