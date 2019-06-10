@@ -16,7 +16,7 @@
 
 		<copy todir="${build.classes.dir}">
 			<fileset dir="${generated.dir}">
-				<include name="webservice/**"/>
+				<include name="/**webservice"/>
 			</fileset>
 			<fileset dir="${classes.dir}">
 				<include name="**"/>

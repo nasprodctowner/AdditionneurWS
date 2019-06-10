@@ -4,11 +4,12 @@ import importservice.*;
 public class addClientWS {
 
     static AddPojoService service;
+
     public static void main(String[] args) {
         try {
 
             //Instancier la classe AddPojoService (celle qui hérite de la classe service) pour récupérer une référence sur le WS
-            AddPojoService service = new AddPojoService();
+            service = new AddPojoService();
             System.out.println("Retrieving the port from the following service: "+ service);
 
             //Récupérer une référence de port qui permettra l'invocation des opérations
